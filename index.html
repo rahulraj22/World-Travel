@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"> <!-- to link the css file -->
+    <script src="https://kit.fontawesome.com/39de6b7b39.js" crossorigin="anonymous"></script>
+    <!-- got from fontawesome.com , we can also get the same from cdnjs.com-->
+    <title>TRAVEL WEBSITE | WELCOME</title>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/63354b5154f06e12d8977b2a/1ge42seb6';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo lg-heading text-light">WT</h1>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="#">Home</a></li>
+                    <li class="nav-item"><a href="./about.html">About</a></li>
+                    <li class="nav-item"><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- for header contents -->
+        <div class="header-content">
+            <h1 class="lg-heading text-light main-heading">travel the world</h1>
+            <p class="text-light">Travel the world, experience the greatness. Its the best given by nature.</p>
+            <a href="#explore-places" class="btn btn-primary text-red md-heading">explore places</a>
+        </div>
+    </header>
+
+    <!-- here, in showcase class we added the id as explore-places same as in a tag og header-content above so that on clicking the explore-places button our page shifts to explore places section automatically. -->
+    <section class="showcase" id="explore-places">
+        <!-- we can use div also but we want to use semantic element -->
+        <div class="container">
+            <div class="row row1">
+                <div class="img-box">
+                    <img src="./images/showcase-photo3.jpg" alt="Image Description">
+                </div>
+                <div class="text-box">
+                    <h2 class="lg-heading text-black">DEGANVY, U.K</h2>
+                    <p class="text-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit repellat
+                        rem quaerat ipsam sed esse pariatur, at nulla blanditiis necessitatibus ad, aliquam tenetur a
+                        voluptates suscipit aut error nobis sint.</p>
+                    <a href="../Travel Website/about.html" class="btn btn-secondary">More</a>
+                </div>
+            </div>
+            <div class="row row2">
+                <div class="img-box">
+                    <img src="./images/showcase-photo1.jpg" alt="">
+                </div>
+                <div class="text-box">
+                    <h2 class="lg-heading text-black">DESERT, EGYPT</h2>
+                    <p class="text-gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam doloribus culpa
+                        ut facere quia omnis quibusdam consectetur voluptate, beatae necessitatibus dolorum nam ad
+                        possimus dolore rem magni accusamus quidem nemo.</p>
+                    <a href="../Travel Website/about.html" class="btn btn-secondary">More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Including Feature Section -->
+    <section class="features">
+        <div class="container">
+            <div class="box-wrapper">
+                <div class="box box-1">
+                    <i class="fa-solid fa-route fa-2x text-red"></i>
+                    <!-- text-red is the utility class we already defined in css file rest classes were taken from fontawesome.com -->
+                    <h2 class="md-heading">Adventrous</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, nostrum? Vero, commodi quam
+                        dignissimos qui recusandae quos quaerat temporibus obcaecati.</p>
+                </div>
+                <div class="box box-2">
+                    <i class="fa-solid fa-strikethrough fa-2x"></i>
+                    <h2 class="md-heading">Less Price</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, nostrum? Vero, commodi quam
+                        dignissimos qui recusandae quos quaerat temporibus obcaecati.</p>
+                </div>
+                <div class="box box-3">
+                    <i class="fa-solid fa-user-check fa-2x text-red"></i>
+                    <h2 class="md-heading">Experience</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, nostrum? Vero, commodi quam
+                        dignissimos qui recusandae quos quaerat temporibus obcaecati.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For footer we will footer tag(HTML5 semantics tag) -->
+    <footer class="footer">
+        <div class="social-media-links">
+            <i class="fa-brands fa-facebook fa-4x"></i>
+            <!-- here, we added all the social media Icons getting fetched from the fontawesome.com -->
+            <i class="fa-brands fa-twitter fa-4x"></i>
+            <i class="fa-brands fa-instagram fa-4x"></i>
+        </div>
+        <p>World Travel &copy; 2020, All Rights Reserved</p>
+    </footer>
+
+
+</body>
+
+</html>
+
+<!-- 
+    To make our website responsive :--
+    We should not use units like in pixels rather we should write it in rems, ems, and in percentages
+    
+    -> rems unit works with the root element
+    -> for increasing the icons of the fontawesome.com we use class i.e fa-nx here n is in what order we want to increase the fonts.
+    -> To get all types of fonts: https://fontawesome.com/icons/instagram?s=&f=brands
+ -->

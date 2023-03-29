@@ -1,0 +1,736 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,300&family=Poppins:wght@100;200;300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* to let fix the border even after increasing the padding it may not be able to affect the box size */
+}
+
+
+/* ############### HTML ELEMENT Styling ############################################################ */
+html {
+    /* font-size: 10px; */  /* why we are doing 10px becoz it will be easy to write in rems later */
+    /* 16px -- 100% */
+    /* 10px -- (100/16) *10 = 62.5% */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    line-height: 1.7;
+}
+
+
+ul li {
+    list-style: none; /* to remove disc etc */
+    
+}
+
+a {
+    font-size: 1.6rem;  /* REM is defined relative to the font size of the root element.  */
+    text-decoration: none;
+}
+
+p, li {
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+}
+/* 
+The em is simply the font size. In an element with a 2in font, 1em thus means 2in. 
+Expressing sizes, such as margins and paddings, in em means they are related to the font size, 
+and if the user has a big font (e.g., on a big screen) or a small font (e.g., on a handheld device), 
+the sizes will be in proportion.
+*/
+
+h1, h2, h3 {
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+    font-weight: 500;  /* this 700 font-weight is choosen becoz will importing font from google fonts we took that se above import link */
+}
+
+/* #################### UTILITY CLASSES ######################## */
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+.lg-heading {  
+    font-size: 3.5rem;
+}
+
+.md-heading {  /* medium heading ki utility class hai ye */
+    font-size: 2.2rem;
+}
+
+.text-red {
+    color: #e63946;
+}
+
+.text-light {
+    color: #f4f4f4;
+}
+
+.text-black {
+    color: #333;
+}
+
+.text-gray {
+    color: #555;
+}
+
+.bg-dark {
+    background-color: #263238;
+}
+
+
+/* ################# For Buttons ######################## */
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+}
+
+.btn-primary {
+    background-color: #fff;
+    border-radius: 10em;
+}
+
+.btn-secondary {   /* for adding secondary button features */
+    border: 2px solid red;
+    border-radius: 2.5em;
+    color: #e63946;
+    background: #fff;
+}
+
+/* Hover Effect in buttons: */
+.btn-primary:hover {
+    background-color: #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #fcf3f2;
+}
+
+
+
+
+/* ############################### header styling ################################################# */
+.header {
+    height: 95vh;   /* implies it will take 95% height of the browser window height */
+    /* here to make the background dark we used to 2 rgba values, it carries 4 values in it each: here fourth value is called alpha value(which by-default is set to 1), we have changed here to another value i.e 0.5 */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/header-image.jpg');
+    
+    /* Other background properties which is used generally in website */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  /* it brings the image to center, we can use "top" here that fix the image at top which do not want */
+}
+
+.navbar {  /* before giving float we are giving the border to look its behaviour */
+    /* border: 2px solid white; */
+    padding: 1rem;
+}
+
+/* It has been romoved becoz its specificity was more than the class text-red for colouring the logo */
+/* .header .logo,
+.header .navbar a {  
+    color: white;
+} */
+
+.navbar .logo {
+    float: left;
+    /* font-size: 3.5rem; */
+}
+
+.navbar .nav-items {
+    float: right;
+    margin-top: 1rem;
+}
+
+.navbar .nav-item {
+    display: inline-block;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.navbar a:link,
+.navbar a:visited {   /* here link and visited is the pseudo class  */
+    color: #f4f4f4;
+}
+
+/* Similarly, there is another pseudo class for hover */
+.navbar a {
+    padding-bottom: 0.3rem;
+}
+.navbar a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+
+/* There are 2 ways to clear floats we studied */
+/* 1. by using pseudo element called after as shown below */
+/* .navbar::after {  
+    content: '';
+    display: block;
+    clear: both;
+} */
+
+/* Other way to clear floats */
+.navbar {
+    overflow: auto;
+}
+
+
+/* ########################## Header content Style ######################################################## */
+
+.header-content {
+    position: absolute;  /* ye karne se: 1. ye html element i.e header-content ab document flow k bahar ho jaayga 2. aur ab hum top, right, bottom, etc me isko laga paayenge 3. aur ye poori viewport ko consider karega */
+    text-align: center;   /* Read: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_text-align */
+    /* border: 2px solid white; */
+    top: 50%;  /* to bring the header content 50% toward the bottom from top */
+    left: 50%;  /* to bring the header content 50% toward the right from left */
+    transform: translate(-50%, -50%);  /* Read: https://www.w3schools.com/css/css3_2dtransforms.asp */
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));  /* for making the background of the header content a bit darker */
+}
+
+
+
+
+
+.header .navbar .nav-item {
+    display: inline-block;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.header-content h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header-content p {
+    text-transform: uppercase;
+}
+
+
+/* #################### Showcase section styling ########################################### */
+
+.showcase {
+    background: #ddd;
+    padding: 10rem 0rem;
+}
+
+.row {
+    height: 350px;
+    /* border: 2px solid red; */
+    background: #fff;  /* #fff is for pure white */
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.315);  /* Box-shadow is applied here */
+}
+
+/* ab humko dono row k beech me margin chahiye tha to humye karenge  */
+.row1 {
+    margin-bottom: 10rem;
+}
+
+.row1 .img-box,
+.row2 .text-box {
+    float: left;
+    width: 50%;
+}
+
+.row1 .text-box,
+.row2 .img-box {
+    float: right;
+    width: 50%;
+}
+
+
+.row .img-box {
+    /* border: 6px solid green; */
+    height: 100%;
+}
+.row .text-box {
+    /* border: 2px solid rebeccapurple; */
+    padding: 3rem;
+}
+
+
+
+.row .img-box img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* for maintaining aspect ratio. Aspect ratio of an image is the ratio of its width to its height, and is expressed with two numbers separated by a colon, such as 16:9*/
+}
+
+
+/* for clearing floats */
+.row::after {   /* we have done here, even though not needed(just in case when we can changes), since height of row is already fixed before */
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+/* ########################## FEATURE SECTION STYLING #########################################*/
+
+.features {
+    padding: 10rem 0rem;  /* for giving padding at top and bottom of 10 rem in feature section */
+}
+
+.box-wrapper {
+    /* border: 2px solid green; */
+    overflow: auto;
+    box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.521);  /* 5px horizonatal offset, 5px vertical offset, 10px blur, 0px spread, and color is rgba(102, 102, 102, 0.521) */
+}
+
+.box-1, .box-3 {
+    background-color: #263238;
+    color: white;
+}
+
+/* Search "linear gradient CSS" to get best color of choice */
+
+.box-2 {
+    background: linear-gradient(25deg, #d64c7f, #ee4758 50%);
+    color: white;  /*  for giving the color of the text in the box */
+}
+
+.box {
+    width: 33.3333333%;   /* 100% / 3 = 33.3333333% for each box */
+    float: left;
+    /* border: 2px solid black; */
+    padding: 2rem;
+    text-align: center;
+}
+
+
+/* ###################### Footer Styling ################################## */
+
+.footer {
+    background: #263238;
+    color: #f4f4f4;
+    padding: 2rem;  /* 2 rem => 20px */
+    text-align: center;
+}
+
+.social-media-links i{
+    margin: 2rem;
+}
+
+
+/* Till here, our homepage or frontpage is ready(still its not responsive, we will make it responsive after using media queries */
+
+
+/* ################### About Page Styling ################################## */
+
+.about {
+    padding: 5rem 0;
+}
+
+/* this is how we added the horizontal line of red color */
+/* .about-heading {
+    border-bottom: 6px solid #e63946;  
+} */
+
+/* For giving line below the About us */
+.about-heading {   
+    border-bottom: 6px solid #e63946;  
+}
+
+/* Now we will use Pseudo element to make a line as we got from above commented code */
+/* by-default this pseudo element i.e ::after is an inline element */
+/* .about-heading::after {  
+    content: '';
+    color: #e63946;
+    display: block;  
+    border: 3px solid #e63946;
+    width: 100%;
+} */
+
+/* ######################## About wrapper Styling ############################## */
+
+.about-wrapper {
+    /* border: 2px solid red; */
+    overflow: auto;
+    text-align: center;
+    margin-top: 2rem;
+}
+.about-wrapper .left{
+    float: left;
+    width: 50%;
+}
+
+.about-wrapper .right{
+    float: right;
+    width: 50%;
+}
+
+.about-wrapper li::before {
+    content: '\2713';  
+    color: #e63946;
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+
+/* ######################## Count Styling ############################### */
+
+.counts {
+    margin-top: 3rem;
+    /* border: 6px solid black; */
+    overflow: auto;
+}
+
+.count-item {
+    /* border: 2px solid red; */
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.count-item span {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e63946;
+}
+
+.count-item p {
+    font-weight: 700;
+    color: #555;
+    font-size: 1.8rem;
+}
+
+
+/* ############################ Banner Styling ########################## */
+
+.cta-banner {
+    background: linear-gradient(25deg, #d64c7f, #ee4758 50%);
+    overflow: auto;
+    color: #f4f4f4;
+    padding: 1rem;
+    box-shadow: 5px 5px 10px #00000057;
+    margin-top: 3rem;
+}
+
+.cta-banner-left {
+    width: 60%;
+    float: left;
+}
+
+.cta-banner-right {
+    width: 40%;
+    float: right;
+    text-align: right;
+}
+
+.cta-line {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+.btn-cta {
+    text-align: center;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+    border: 4px solid white;
+    padding: 0.3em 2.5em;
+    letter-spacing: 0.5rem;
+    color: #f4f4f4;
+}
+
+
+/* ########################## Contact Page Styling ############################# */
+
+.contact-form {
+    padding: 5rem 0;
+    background: #f7f7f7;
+    /* font-size: 2rem; */
+}
+
+.form-wrapper {
+    /* border: 10px solid red; */
+    overflow: auto;   /* other way to clear floats is shown below */
+}
+
+/* .form-wrapper::after {
+    content: "";
+    display: block;
+    clear: both;
+} */
+
+.form-wrapper .company-address {
+    height: 760px;
+    background: #fff;
+    /* border: 4px dotted green; */
+    width: 49%;
+    float: left;
+    padding: 1rem;
+}
+
+
+.form-wrapper .company-address i{
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.form-wrapper .company-address h2{  /* to bring the icon and address in same line */
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+
+.form-wrapper .address-group {
+    margin-bottom: 3rem;
+}
+
+.form-wrapper .company-address img {
+    width: 90%;
+    max-width: 90%;
+    min-height: 40rem;
+    object-fit: cover;
+    object-position: right;  /* This will fix the right side image appearence even after minimizing the screen */
+}
+
+
+
+/* ############################ Form Styling ################################# */
+
+.form-wrapper .form {
+    height: 760px;
+    font-size: 1.6rem;
+    background: #fff;
+    /* border: 4px dotted black; */
+    width: 49%;
+    float: right;
+    padding: 1rem;
+}
+
+/* Red line below contact us */
+/* This way is not working fine(see other way shown below */
+/* .form h1::after {   
+    content: '';
+    display: block;
+    border: 6px solid #ee4758;
+    width: 100%;
+} */
+
+/* Other way to do the same */
+
+.form h1 {
+    border-bottom: 6px solid #ee4758;
+}
+
+.form-wrapper .form label {
+    display: block;
+}
+
+.form-wrapper .form input {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.form-wrapper .form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-wrapper .form label::after {
+    content: '*';
+    color: #ee4758;
+}
+
+.form-wrapper .form textarea {
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+}
+
+/* Now, we will style the button */
+.form-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 3em;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    background: #e63946;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* ############################## MEDIA Queries ############################### */
+
+
+/* lets target those devices whose screen size is less then 500px */
+@media (max-width: 500px) {
+    html {
+        /* font-size: 8px; */
+        font-size: 50%;
+    }
+    
+    .navbar .nav-items, .navbar .logo {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header-content .main-heading {
+        display: none;  /* to avoid displaying "TRAVEL THE WORLD" on screen.(personal Preference) */
+    }
+    
+    /* Working for the Sections: */
+    .row {
+        height: auto;
+        width: 100%;
+    }
+    
+    .row .img-box,
+    .row .text-box {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    
+    .features .box {
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.521);
+    }
+    .features .box-2,
+    .features .box-3 {
+        margin-top: 7rem;
+    }
+    .box-wrapper {
+        box-shadow: none;
+    }
+    
+    
+    /* About page section:-- */
+    
+    .cta-banner-left,
+    .cta-banner-right {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Contact page section: */
+    
+    .form-wrapper .company-address {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+    }
+    .form-wrapper .form {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@media (min-width: 501px) and (max-width: 768px) {
+    html {
+        /* font-size: 8px; */
+        font-size: 50%;
+    }
+    
+    p {
+        font-size: 1.8rem;
+    }
+    
+    .navbar .nav-items, .navbar .logo {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    
+    /* Working for the Sections: */
+    .row {
+        height: auto;
+        width: 100%;
+    }
+    
+    .row .img-box,
+    .row .text-box {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    
+    .features .box {
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.521);
+    }
+    .features .box-2,
+    .features .box-3 {
+        margin-top: 7rem;
+    }
+    .box-wrapper {
+        box-shadow: none;
+    }
+    
+    
+    /* About page section:-- */
+    
+    .cta-banner-left,
+    .cta-banner-right {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Contact page section: */
+    
+    .form-wrapper .company-address {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+    }
+    .form-wrapper .form {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    html {
+        font-size: 56.25%;   /* 900/16 = 56.25 */
+    }
+    .row .text-box h2 {
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+}
+
+
+/* Landscape Mode: */
+
+@media (orientation: landscape) and (max-height: 500px){
+    .header {
+        height: 90vmax;  /* means jitni v width hogi uski 90% height ho jayegi */
+    }
+}

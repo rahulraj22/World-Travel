@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"> <!-- to link the css file -->
+    <script src="https://kit.fontawesome.com/39de6b7b39.js" crossorigin="anonymous"></script>
+    <!-- got from fontawesome.com , we can also get the same from cdnjs.com-->
+    <title>TRAVEL WEBSITE | Contact Page</title>
+</head>
+
+<body>
+    <nav class="navbar bg-dark">
+        <div class="container">
+            <h1 class="logo lg-heading text-light">WT</h1>
+            <ul class="nav-items">
+                <li class="nav-item"><a href="./index.html">Home</a></li>
+                <li class="nav-item"><a href="./about.html">About</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Contact form begins here -->
+    <section class="contact-form">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="company-address">
+                    <div class="address-group">
+                        <i class="fas fa-map-marker-alt fa-3x text-red"></i>
+                        <h2 class="text-gray md-heading">Location</h2>
+                        <p>#E119 IIT Gandhinagar, Palaj- Ahemdabad</p>
+                    </div>
+                    <div class="address-group">
+                        <i class="far fa-envelope fa-3x text-red"></i>
+                        <h2 class="text-gray md-heading">Email</h2>
+                        <p>raj.rahul&#64;iitgn.ac.in</p>
+                    </div>
+                    <div class="address-group">
+                        <i class="fas fa-phone-square-alt fa-3x text-red"></i>
+                        <h2 class="text-gray md-heading">Call</h2>
+                        <p>+91-7070025098</p>
+                    </div>
+                    <img src="./images/company-img.jpg" alt="company-img">
+                </div>
+                <form action="" class="form">
+                    <h1 class="lg-heading text-black">Contact us</h1>
+                    <p class="text-gray">Let us know your question, suggestion and concerns by filling out the contact
+                        form below.</p>
+
+                    <!-- Now, we will work on INPUTS i.e username, email, phone -->
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="Username" id="username" required> <!-- to get this type input:text -->
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="Email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="PhoneNo" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="Message" id="message"></textarea>
+                    </div>
+                    <button type="submit" class="form-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- For footer we will use footer tag(HTML5 semantics tag) -->
+    <footer class="footer">
+        <div class="social-media-links">
+            <i class="fa-brands fa-facebook fa-4x"></i>  <!-- here, we added all the social media Icons getting fetched from the fontawesome.com -->
+            <i class="fa-brands fa-twitter fa-4x"></i>
+            <i class="fa-brands fa-instagram fa-4x"></i>
+        </div>
+        <p>World Travel &copy; 2020, All Rights Reserved</p>
+    </footer>
+    
+</body>
+
+</html>
+
+
+<!-- 
+    How to give a horizontal line just below the about us section-
+    
+ -->
+ 
+ 
+<!-- 
+    After this we will begin chapter-6::::::: for making our website responsive. >>>>>
+ -->
